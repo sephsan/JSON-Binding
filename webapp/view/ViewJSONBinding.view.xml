@@ -1,6 +1,83 @@
-<mvc:View controllerName="sapips.training.jsonbinding.controller.ViewJSONBinding"
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="sapips.training.jsonbinding.controller.ViewJSONBinding"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+    <Panel id="pan1" headerText="Data Binding Basics" width="auto" class="sapUiResponsiveMargin">  
+        <f:SimpleForm
+		editable="true"
+		layout="ResponsiveGridLayout"
+		labelSpanL="4"
+		labelSpanM="4">
+		    <f:content>
+                <Label id="lEID" text="EID:"/>
+                <Input id="eID" enabled="true"  value="{/Eid}"/>         
+                <Label id="lEna" text="Enabled" />
+                <CheckBox id="eEna" text="" selected="{/Enabled}" />           
+           	</f:content>
+	    </f:SimpleForm>
+	</Panel>
+
+    <Panel id="panAdd" headerText="Address Details" width="auto" class="sapUiResponsiveMargin">   
+		<f:SimpleForm
+		editable="true"
+		layout="ResponsiveGridLayout"
+		labelSpanL="4"
+		labelSpanM="4">
+              <Label id="lAddress" text="Address"/>
+              <Input id="eAddress" value="{parts:[{path:'/s'}],formatter: '.formatAddress'}" enabled="false"></Input>  
+              <Label id="lAmount" text="Amount"/>
+              <Input id="eAmount" 
+                     enabled="true"
+                     type="Number"
+			         placeholder="9999,999.00"    
+                     value="{/SalesAmount}"></Input>           
+         </f:SimpleForm>
+	</Panel>
+        <Panel id="panBind" headerText="Aggregation Binding" width="auto" class="sapUiResponsiveMargin">   
+		<f:SimpleForm
+		editable="true"
+		layout="ResponsiveGridLayout"
+		labelSpanL="4"
+		labelSpanM="4">
+         	<List
+                id="ProductList"
+                items="{/ProductCollection}"
+                includeItemInSelection="true">
+            <StandardListItem
+            id="2"
+			title="{Name}"
+			description="{ProductId}"
+			icon="{ProductPicUrl}"
+			iconDensityAware="false"
+			iconInset="false"
+			press="handlePress"
+			detailPress="handleDetailPress" />
+            </List>
+         </f:SimpleForm>
+	</Panel>
+    <Panel id="panDet" headerText="Product Details" width="auto" class="sapUiResponsiveMargin">   
+		<f:SimpleForm
+		editable="true"
+		layout="ResponsiveGridLayout"
+		labelSpanL="4"
+		labelSpanM="4">
+         	 <f:content>
+                <Label id="lPId"         text="Product ID"           />
+                <Input id="ePId"         enabled="true"     value=""/>         
+                <Label id="lProductName" text="Product Name"         />
+                <Input id="eProductName" enabled="true"     value=""/>  
+                <Label id="lQpu"         text="Quantity Per Unit"     />
+                <Input id="eQpu"         enabled="true"     value=""/>  
+                <Label id="lUprice"      text="Unit Price"           />
+                <Input id="elUprice"     enabled="true"     value=""/>  
+                <Label id="lUIStock"      text="Units In Stock"           />
+                <Input id="eUIStock"     enabled="true"     value=""/> 
+                <Label id="lDiscon"      text="Discontinued"           />
+                <Input id="eDiscon"     enabled="true"     value=""/> 
+           	</f:content>
+         </f:SimpleForm>
+	</Panel>
     </Page>
 </mvc:View>

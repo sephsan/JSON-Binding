@@ -1,0 +1,26 @@
+[
+    {
+        "ProductID":"1",
+        "ProductName":"",
+        "SupplierID":"",
+        "CategoryID":"",
+        "QuantityPerUnit":"",
+        "UnitPrice":"",
+        "UnitsInStock":"",
+        "UnitsOnOrder":"",
+        "ReorderLevel":"",
+        "Discontinued":""
+    },
+        {
+        "ProductID":"2",
+        "ProductName":"",
+        "SupplierID":"",
+        "CategoryID":"",
+        "QuantityPerUnit":"",
+        "UnitPrice":"",
+        "UnitsInStock":"",
+        "UnitsOnOrder":"",
+        "ReorderLevel":"",
+        "Discontinued":""
+    }
+]
